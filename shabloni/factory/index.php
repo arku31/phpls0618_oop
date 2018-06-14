@@ -1,10 +1,14 @@
 <?php
 require "factory.php";
-$buttons = array('Red', 'Green', 'Blue');
-foreach ($buttons as $b) {
-    echo ButtonFactory::createButton($b)->getHtml();
-}
+try {
+    $buttons = array('Red', 'Green', 'Blue', 'asdasd');
 
+    foreach ($buttons as $b) {
+        echo ButtonFactory::createButton($b)->getHtml();
+    }
+} catch (\Exception $e) {
+     file_put_contents('log.txt',$e->getMessage());
+}
 ?>
 
 <style>

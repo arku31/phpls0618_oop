@@ -1,4 +1,5 @@
 <?php
+require_once "Twitter.php";
 
 class DB
 {
@@ -57,5 +58,8 @@ class Social
 //        fb::post();
         $fb = new fb();
         $fb->post();
+
+        $twitter = new Twitter();
+        $twitter->post();
     }
 }

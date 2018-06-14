@@ -10,12 +10,14 @@ $b = Session::getInstance()->getChanges();
 $b = Session::getInstance()->getChanges();
 $b = Session::getInstance()->getChanges();
 
-$c = new Session();
-echo 'c:'.$c->getChanges().PHP_EOL;
-$d = new Session();
-echo 'd:'.$d->getChanges().PHP_EOL;
+echo $a.PHP_EOL.$b.PHP_EOL;
 
-echo 'b:'.$b;
+//$c = new Session();
+//echo 'c:'.$c->getChanges().PHP_EOL;
+//$d = new Session();
+//echo 'd:'.$d->getChanges().PHP_EOL;
+
+
 class Session
 {
     protected $changes;
@@ -35,7 +37,7 @@ class Session
         return $this->changes;
     }
 
-    public function __construct()
+    protected function __construct()
     {
         //
     }

@@ -2,6 +2,10 @@
 /**
  * В кратце: Возмжоно прятать часть кода в "капсулы"
  */
+$capsule = new Capsule();
+$capsule->setHidden('123123');
+echo $capsule->getHidden();
+
 class Capsule
 {
     private $hidden = 123;
@@ -32,6 +36,22 @@ class Capsule
     public function getChanges()
     {
         echo $this->changes;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPartiallyhidden()
+    {
+        return $this->partiallyhidden;
+    }
+
+    /**
+     * @param string $partiallyhidden
+     */
+    public function setPartiallyhidden($partiallyhidden)
+    {
+        $this->partiallyhidden = $partiallyhidden;
     }
 }
 

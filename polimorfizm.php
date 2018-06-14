@@ -7,21 +7,21 @@
  */
 abstract class Figure
 {
-    abstract public function Draw(); // абстрактный метод «Нарисовать фигуру»     }
+    abstract public function draw(); // абстрактный метод «Нарисовать фигуру»     }
 }
 
 class Triangle extends Figure
 {
-    public function Draw()
+    public function draw()
     {
         echo 'рисуем треугольник';
     }
 }
 
 
-class Circle
+class Circle extends Figure
 {
-    public function Draw()
+    public function draw()
     {
         echo 'рисуем круг';
     }
@@ -31,10 +31,11 @@ class Circle
 function drawFigure($fig)
 {
     if ($fig instanceof Figure) {
-        $fig->Draw();
+        $fig->draw();
     } else {
         echo 'Неизвестная фигура';
     }
+    echo PHP_EOL;
 }
 
 $triangle = new Triangle();
